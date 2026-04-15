@@ -2,11 +2,11 @@
 
 > **作业说明文档**：[docs/homework.pdf](docs/homework.pdf)
 >
-> 本项目为题目一（围棋 AI）的实现框架。
+> 本项目为题目一（围棋 AI）的实现。
 
 围棋是一种古老的棋类游戏，蕴含着古人的智慧。2016 年，AlphaGo 击败人类顶尖棋手，标志着人工智能在博弈领域取得里程碑式的突破，其核心正是蒙特卡洛树搜索（MCTS）与深度神经网络的结合。
 
-本题目要求实现一个基于蒙特卡洛树搜索的简易围棋 AI，能够与人类用户进行对弈。我们提供围棋的基本规则代码（包括落子合法性、提子、禁入点、终局判断等），你需要自行实现决策模块，并设计必要的图形化界面。
+本项目实现一个基于蒙特卡洛树搜索的简易围棋 AI，能够与人类用户进行对弈。项目提供围棋的基本规则代码（包括落子合法性、提子、禁入点、终局判断等）/决策模块以及必要的图形化界面。
 
 ---
 
@@ -19,31 +19,35 @@
 
 ## AI 辅助声明
 
-本项目作业框架在 **Claude Code + GLM-5** 的辅助下完成编写。
+本项目作业框架在 **GPT-5.3-Codex** 的辅助下完成编写。
 
 ---
 
 ## 项目结构
 
 ```
-hw1/
-├── docs/                  # 【文档】作业说明
+ai-course-hw1/
+├── docs/                  # 作业说明
 │   └── homework.pdf       # 作业要求 PDF
 │
-├── dlgo/                  # 【已提供】围棋规则基础设施
+├── dlgo/                  # 围棋规则基础设施
 │   ├── __init__.py        # 模块导出
 │   ├── gotypes.py         # Player, Point 等基础类型
 │   ├── goboard.py         # Board, GameState, Move 核心逻辑
 │   ├── scoring.py         # 计分系统
 │   └── zobrist.py         # Zobrist 哈希表
 │
-├── agents/                # 【学生实现】智能体算法
+├── agents/                # 智能体算法
 │   ├── __init__.py
-│   ├── random_agent.py    # 第一小问：随机 AI
-│   ├── mcts_agent.py      # 第二小问：MCTS AI
-│   └── minimax_agent.py   # 第三小问：Minimax AI（选做）
+│   ├── random_agent.py    # 随机 AI
+│   ├── mcts_agent.py      # MCTS AI
+│   └── minimax_agent.py   # Minimax AI
+|
+├──logs/                   # 【日志】对弈记录
 │
 ├── play.py                # 命令行对弈脚本
+├── play_log.py            # 命令行对弈脚本(含日志记录)
+├── gui.py                 # 图形化界面脚本
 └── README.md              # 本文件
 ```
 
