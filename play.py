@@ -15,7 +15,7 @@ from dlgo.goboard import Move
 
 
 def random_agent(game_state):
-    """随机选择合法棋步（第一小问）。"""
+    """随机选择合法棋步。"""
     # 使用 agents.random_agent.RandomAgent
     try:
         from agents.random_agent import RandomAgent
@@ -28,7 +28,7 @@ def random_agent(game_state):
 
 
 def mcts_agent(game_state):
-    """MCTS 智能体（占位，学生实现后替换）。"""
+    """MCTS 智能体接口。"""
     try:
         from agents.mcts_agent import MCTSAgent
         agent = MCTSAgent(num_rounds=100)
@@ -39,7 +39,7 @@ def mcts_agent(game_state):
 
 
 def minimax_agent(game_state):
-    """Minimax 智能体（占位，学生实现后替换）。"""
+    """Minimax 智能体接口。"""
     try:
         from agents.minimax_agent import MinimaxAgent
         agent = MinimaxAgent(max_depth=3)
